@@ -22,11 +22,16 @@ jobs:
           java-version: 21
           distribution: 'temurin'
 
+      - name: Verify Java version
+        run: java -version
+
       - name: Make Gradle executable
         run: chmod +x ./gradlew
 
-      - name: Build mod
+      - name: Build mod (force Java 21)
         run: ./gradlew build
+        env:
+          JAVA_HOME: ${{ env.JAVA_HOME_21_X64 }}
 
       - name: Find artifact (Mod JAR)
         id: findJar
