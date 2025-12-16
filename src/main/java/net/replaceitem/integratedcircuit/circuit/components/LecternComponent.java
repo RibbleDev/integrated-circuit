@@ -6,6 +6,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.CommonColors;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -49,7 +50,7 @@ public class LecternComponent extends Component {
         drawContext.pose().translate(x + 8, y + 8);
         drawContext.pose().scale(.8f, .8f);
         drawContext.pose().translate( (float) textRenderer.width(text) / -2, (float) textRenderer.lineHeight / -2 + 1);
-        drawContext.drawString(textRenderer, text, 0, 0, CommonColors.BLACK, false);
+        drawContext.drawString(textRenderer, text, 0, 0, ARGB.color(a, CommonColors.BLACK), false);
         drawContext.pose().popMatrix();
     }
 
